@@ -1,0 +1,1 @@
+## Resultado do curso de .NET CORE + ENTITYFRAMEWORK 2.2
