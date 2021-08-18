@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ProAgil.WebAPI.Data;
 using ProAgil.WebAPI.Model;
@@ -20,16 +21,24 @@ namespace ProAgil.WebAPI.Controllers
         }
         // GET api/values
         [HttpGet]
-        public ActionResult<IEnumerable<Evento>> Get()
+        public IActionResult Get()
         {
-            return Context.Eventos.ToList();
+            try
+            {
+                var results = Context.Eventos.ToList();
+                return Ok(results);
+            }
+            catch (System.Exception)
+            {
+                return this.StatusCode(StatusCodes.Status500InternalServerError, "O Banco de dados Falhou.");
+            }
         }
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public ActionResult<Evento> Get(int id)
+        public IActionResult Get(int id)
         {
-            return Context.Eventos.FirstOrDefault(x => x.EventoId == id);
+            return Ok(Context.Eventos.FirstOrDefault(x => x.EventoId == id));
         }
 
         // POST api/values
