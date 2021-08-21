@@ -1,7 +1,8 @@
-<h4>
-  eventos works!
-</h4>
-
 <div *ngFor="let e of eventos">
-  Tema: {{e.tema}} | Local: {{e.local}}
+  <div class="card mb-3">
+    <div class="card-body">
+      <p>Tema: {{e.tema}}</p>
+      <p>Local: {{e.local}}</p>
+    </div>
+  </div>
 </div>
