@@ -1,6 +1,8 @@
-<form action="">
-  <div class="form-group mb-2">
-    <input type="text" class="form-control md-2">
+<form class="row g-2 mb-3">
+  <div class="col-auto">
+    <input type="text" class="form-control mr-2" placeholder="Buscar" />
+  </div>
+  <div class="col-auto">
     <button class="btn btn-outline-success">buscar</button>
   </div>
 </form>
@@ -17,13 +19,13 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+    <tr *ngFor="let evento of eventos">
+      <td>{{evento.eventoId}}</td>
+      <td>{{evento.tema}}</td>
+      <td>{{evento.local}}</td>
+      <td>{{evento.dataEvent}}</td>
+      <td>{{evento.qtdPessoas}}</td>
+      <td>{{evento.lote}}</td>
       <td></td>
     </tr>
   </tbody>
