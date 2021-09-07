@@ -1,14 +1,15 @@
-<form class="row g-2 mb-3">
+<div class="row g-2 mb-3">
   <div class="col-auto">
     <input type="text" 
       class="form-control mr-2" 
       placeholder="Buscar" 
-      >
+      [(ngModel)]="filtroLista" >
   </div>
   <div class="col-auto">
     <button class="btn btn-outline-success">buscar</button>
   </div>
-</form>
+</div>
+<p>Filtro: {{filtroLista}}</p>
 <table class="table table-striped">
   <thead>
     <tr>
@@ -53,12 +54,3 @@
     </tr>
   </tfoot>
 </table> 
-
-<!-- <div *ngFor="let e of eventos">
-  <div class="card mb-3">
-    <div class="card-body">
-      <p>Tema: {{e.tema}}</p>
-      <p>Local: {{e.local}}</p>
-    </div>
-  </div>
-</div> -->
