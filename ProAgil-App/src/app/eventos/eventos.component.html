@@ -5,11 +5,7 @@
       placeholder="Buscar" 
       [(ngModel)]="filtroLista" >
   </div>
-  <div class="col-auto">
-    <button class="btn btn-outline-success">buscar</button>
-  </div>
 </div>
-<p>Filtro: {{filtroLista}}</p>
 <table class="table table-striped">
   <thead>
     <tr>
@@ -28,7 +24,7 @@
     </tr>
   </thead>
   <tbody *ngIf="eventos && eventos.length > 0">
-    <tr *ngFor="let evento of eventos">
+    <tr *ngFor="let evento of eventosFiltrados">
       <td>
         <img 
           *ngIf="mostrarImagem"
