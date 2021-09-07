@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using ProAgil.Domain;
 
-namespace ProAgil.Doamin
+namespace ProAgil.Domain
 {
     public class Evento
     {

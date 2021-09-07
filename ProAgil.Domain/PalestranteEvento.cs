@@ -1,5 +1,3 @@
-using ProAgil.Doamin;
-
 namespace ProAgil.Domain
 {
     public class PalestranteEvento
