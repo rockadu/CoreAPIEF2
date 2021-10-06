@@ -3,15 +3,15 @@ import { RedeSocial } from './RedeSocial';
 import { Palestrante } from './Palestrante';
 
 export interface Evento {
-    id : number;
+    eventoId : number;
     local : string;
-    dataEvento : Date;
+    dataEvent : Date;
     tema : string;
     qtdPessoas : number;
-    imagemUrl : string;
+    imagemURL : string;
     telefone : string;
     email : string;
-    lotes : Lote[];
+    lote : Lote[];
     redesSociais : RedeSocial[];
     palestrantesEventos : Palestrante[];
 }
