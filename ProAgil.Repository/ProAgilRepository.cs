@@ -12,6 +12,7 @@ namespace ProAgil.Repository
         public ProAgilRepository(ProAgilContext context)
         {
             _context = context;
+            _context.ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
         }
         public void Add<T>(T entity) where T : class
         {
@@ -63,7 +64,7 @@ namespace ProAgil.Repository
             }
 
             query = query.OrderByDescending(d => d.DataEvento)
-                                .Where(t => t.Tema.ToLower().Contains(tema.ToLower()));
+                            .Where(t => t.Tema.ToLower().Contains(tema.ToLower()));
 
             return await query.ToArrayAsync();
         }
@@ -81,7 +82,7 @@ namespace ProAgil.Repository
             }
 
             query = query.OrderByDescending(d => d.DataEvento)
-                                .Where(e => e.Id == eventoId);
+                            .Where(e => e.Id == eventoId);
 
             return await query.FirstOrDefaultAsync();
         }
@@ -109,8 +110,7 @@ namespace ProAgil.Repository
 
             if(includeEventos)
             {
-                query = query
-                            .Include(pe => pe.PalestrantesEventos)
+                query = query.Include(pe => pe.PalestrantesEventos)
                             .ThenInclude(e => e.Evento);
             }
 
